@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derechos Laborales & Asociados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --text-color: #333;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Header y navegación */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links > div {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero section */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/600');
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Secciones principales */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Formulario de contacto */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Derechos Laborales & Asociados con la abogada Paula Alejandra Londoño</a>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#servicios">Servicios</a>
+                    <div class="dropdown-content">
+                        <a href="#despidos">Despidos Injustificados</a>
+                        <a href="#discriminacion">Discriminación Laboral</a>
+                        <a href="#acoso">Acoso Laboral</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#quienes-somos">Quiénes Somos</a>
+                    <div class="dropdown-content">
+                        <a href="#equipo">Nuestro Equipo</a>
+                        <a href="#historia">Historia</a>
+                        <a href="#valores">Valores</a>
+                    </div>
+                </div>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Defendemos tus Derechos Laborales</h1>
+            <p>Más de 20 años de experiencia protegiendo los derechos de los trabajadores</p>
+            <button onclick="location.href='#contacto'">Consulta Gratuita</button>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Despidos Injustificados</h3>
+                <p>Asesoramiento legal completo en casos de despido improcedente o nulo.</p>
+            </div>
+            <div class="service-card">
+                <h3>Discriminación Laboral</h3>
+                <p>Protección contra todo tipo de discriminación en el entorno laboral.</p>
+            </div>
+            <div class="service-card">
+                <h3>Acoso Laboral</h3>
+                <p>Defensa legal en situaciones de mobbing y acoso en el trabajo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quienes-somos">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <p>Somos un equipo de abogados especializados en derecho laboral con más de dos décadas de experiencia. Nuestro compromiso es defender los derechos de los trabajadores y garantizar un trato justo en el ámbito laboral.</p>
+    </section>
+
+    <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono">
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Describe tu caso</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+            <button type="submit">Enviar consulta</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Derechos Laborales & Asociados. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Manejar el envío del formulario
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Recoger los datos del formulario
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value,
+                mensaje: document.getElementById('mensaje').value
+            };
+
+            // Aquí normalmente enviarías los datos a un servidor
+            alert('Gracias por contactarnos. Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+
+        // Smooth scroll para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+<a href="URL">Texto ancla</a>
+<!-- Archivo robots.txt -->
+User-agent: *
+Allow: /
+Sitemap: https://derechoslaborales.com/sitemap.xml
+
+<!-- Archivo sitemap.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://derechoslaborales.com/</loc>
+    <lastmod>2025-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://derechoslaborales.com/servicios</loc>
+    <lastmod>2025-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://derechoslaborales.com/quienes-somos</loc>
+    <lastmod>2025-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://derechoslaborales.com/contacto</loc>
+    <lastmod>2025-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
+
+<!-- Meta tags para SEO (agregar al <head> del index.html) -->
+<meta name="description" content="Bufete de abogados especializado en derechos laborales. Más de 20 años de experiencia defendiendo los derechos de los trabajadores.">
+<meta name="keywords" content="derechos laborales, abogados laborales, despido injustificado, discriminación laboral, acoso laboral">
+<meta name="author" content="Derechos Laborales & Asociados">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph tags para redes sociales -->
+<meta property="og:title" content="Derechos Laborales & Asociados - Especialistas en Derecho Laboral">
+<meta property="og:description" content="Expertos en la defensa de los derechos de los trabajadores. Consulta gratuita.">
+<meta property="og:image" content="https://derechoslaborales.com/images/og-image.jpg">
+<meta property="og:url" content="https://derechoslaborales.com">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+</html>
